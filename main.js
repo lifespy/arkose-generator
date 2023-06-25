@@ -16,7 +16,8 @@ app.get('/api/arkose', async (req, res) => {
       site: 'https://chat.openai.com',
     });
 
-    res.json({ token });
+    // Send token as string
+    res.send(token);
   } catch (error) {
     res.status(500).json({ error: 'Failed to retrieve token' });
   }
